@@ -9,22 +9,19 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table(name="department")
+@Table(name="notification")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Department {
+public class Notification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Long organizationId;
-    private String name;
-    @Transient
-    private List<Employee> employees;
-    private String position;
-
-
+    private String from;
+    private String to;
+    private String subject;
+    private String message;
 }
